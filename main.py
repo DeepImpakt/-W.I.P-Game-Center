@@ -60,17 +60,39 @@ def TicP1(taken):
     global win
     global error
 
+    error = 1
+
     clearScreen()
     if taken == 1:
         print("Taken, pick again")
 
     print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
     print("\033[1;37;40mPick column 1, 2, or 3")
-    column = int(input('Player 1: '))
+    while error == 1:
+        try:
+            column = int(input('Player 1: '))
+        except ValueError:
+            clearScreen()
+            print('Error, try again')
+            print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
+            print("\033[1;37;40mPick column 1, 2, or 3")
+        else:
+            error = 0
+
+    error = 1
     clearScreen()
     print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
     print("\033[1;37;40mPick row 1, 2, or 3")
-    row = int(input('Player 1: '))
+    while error == 1:
+        try:
+            row = int(input('Player 1: '))
+        except ValueError:
+            clearScreen()
+            print('Error, try again')
+            print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
+            print("\033[1;37;40mPick column 1, 2, or 3")
+        else:
+            error = 0
 
     if column == 1:
         if row == 1 and tl == blankTile:
@@ -119,7 +141,10 @@ def TicP2(taken):
     global bm
     global br
     global win
+    
     global error
+
+    error = 1
 
     clearScreen()
     if taken == 1:
@@ -127,14 +152,31 @@ def TicP2(taken):
 
     print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
     print("\033[1;37;40mPick column 1, 2, or 3")
-    try:
-        column = int(input('Player 2: '))
-    except ValueError:
-        print('Error, try again')
+    while error == 1:
+        try:
+            column = int(input('Player 2: '))
+        except ValueError:
+            clearScreen()
+            print('Error, try again')
+            print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
+            print("\033[1;37;40mPick column 1, 2, or 3")
+        else:
+            error = 0
+
+    error = 1
     clearScreen()
     print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
     print("\033[1;37;40mPick row 1, 2, or 3")
-    row = int(input('Player 2: '))
+    while error == 1:
+        try:
+            row = int(input('Player 2: '))
+        except ValueError:
+            clearScreen()
+            print('Error, try again')
+            print('\033[1;37;40m    1   2   3', '\n', '\033[1;37;40m1', tl, tm, tr, '\n', '\033[1;37;40m2', ml, mm, mr, '\n', '\033[1;37;40m3', bl, bm, br)
+            print("\033[1;37;40mPick column 1, 2, or 3")
+        else:
+            error = 0
 
     if column == 1:
         if row == 1 and tl == blankTile:
