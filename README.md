@@ -7,4 +7,5 @@ If you want to use it, please leave a link to this repo in your project
 # List of games
 
 Number Guessing game
+
 Tick-Tac-Toe (wip)
